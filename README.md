@@ -1,2 +1,9 @@
-# dynamic-pricing-agent
-An AI pricing optimization assistant that takes retail data and generates an analysis and optimization of retail prices to maximize revenue and pricing strategies.
+# Dynamic Pricing Agent 
+
+### Dynamically optimizing revenue through AI
+demo link 
+
+## Business Problem
+With high volumes of retail data,
+- **High
+- **Low

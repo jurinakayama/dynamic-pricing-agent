@@ -13,3 +13,10 @@ df2 = pd.read_csv('data/online_retail_2010_2011.csv')
 df = pd.concat([df1, df2])
 print(df.head())
 
+df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
+df['Year'] = df['InvoiceDate'].dt.year
+df['Month'] = df['InvoiceDate'].dt.month
+df['Hour'] = df['InvoiceDate'].dt.hour
+
+
+print(df.columns)

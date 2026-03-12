@@ -31,7 +31,7 @@ After preprocessing, data was:
 2. Feature Engineering
 * used following log transformation for demand modeling
     $$\log(Q) = \beta_0 + \beta_1 \log(P)$$
-where $\beta_1 is price elasticity$
+where $\beta_1$ is price elasticity
 
 3. Model
 Linear regression model to estimate elasticity for each product

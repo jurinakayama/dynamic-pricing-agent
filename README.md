@@ -23,3 +23,35 @@ After preprocessing, data was:
 * around 4,000 products
 
 ## Methods Used
+1. Data Cleaning
+* Removed negative quantities 
+* Removed missing customer IDs
+* Filtered invalid prices 
+
+2. Feature Engineering
+* used following log transformation for demand modeling
+    $$\log(Q) = \beta_0 + \beta_1 \log(P)$$
+where $\beta_1 is price elasticity
+
+3. Model
+Linear regression model to estimate elasticity for each product
+
+Libraries used
+* pandas
+* numpy
+* scikit-learn
+
+Interpretation shows that
+* Price Elastic (Elasticity < –1): Demand is sensitive to price
+* Price Inelastic (Elasticity > -1): Demand is less sensitive to price
+
+
+
+**KEY INSIGHTS**
+* ~60% of products were elastic
+* Reducing the price would increase revenue for highly elastic products
+
+
+
+**Author**
+*Juri Nakayama*

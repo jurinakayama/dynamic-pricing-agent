@@ -23,9 +23,8 @@ After preprocessing, data was:
 * around 4,000 products
 
 ## Methods Used
-1. Data Cleaning
-* Removed negative quantities 
-* Removed missing customer IDs
+1. Data Cleaning (Cleans the raw transactional data given)
+* Removed negative quantities, missing customer IDs for more relavant analysis
 * Filtered invalid prices 
 
 2. Feature Engineering
@@ -41,9 +40,21 @@ Libraries used
 * numpy
 * scikit-learn
 
+Demand vs Price
+( MODEL) 
+
+4. Pricing Engine
+Recommends mathematically optimal price by application of economic formulas (e.g., Lerner Index) and business guardrails (e.g., +- 20% price)
+
 Interpretation shows that
 * Price Elastic (Elasticity < –1): Demand is sensitive to price
 * Price Inelastic (Elasticity > -1): Demand is less sensitive to price
+
+
+**Example Output**
+Example elasticity values:
+
+
 
 
 
@@ -52,6 +63,38 @@ Interpretation shows that
 * Reducing the price would increase revenue for highly elastic products
 
 
+**INSTALLATION**
+Clone the repository:
+git clone https://github.com/yourusername/dynamic-pricing-agent.git cd dynamic-pricing-agent
+
+Install:
+pip install -r requirements.txt
+
+Run pipeline:
+python main.py
+
+**Project Structure**
+dynamic-pricing-agent
+│
+├─ data 
+│   ├─ online_retail_II.xlsx
+│   ├─ online_retail_2009_2010.csv
+│   └─ online_retail_2010_2011.csv
+│
+├─ app
+│   └─ dashboard.py
+│
+├─ models 
+├─ notebooks
+│
+├─ src  
+│   ├─ data_loader.py
+│   ├─ elasticity_model.py
+│   └─ pricing_engine.py
+│
+├─ main.py
+├─ README.md
+└─ requirements.txt 
 
 **Author**
 *Juri Nakayama*

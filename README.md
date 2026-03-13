@@ -74,6 +74,7 @@ Run pipeline:
 python main.py
 
 **Project Structure**
+```text
 dynamic-pricing-agent
 │
 ├─ data 
@@ -95,6 +96,7 @@ dynamic-pricing-agent
 ├─ main.py
 ├─ README.md
 └─ requirements.txt 
+```
 
 **Author**
 *Juri Nakayama*

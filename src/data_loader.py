@@ -6,7 +6,6 @@ df2 = pd.read_excel(file_path, sheet_name='Year 2010-2011')
 df1.to_csv('data/online_retail_2009_2010.csv', index=False)
 df2.to_csv('data/online_retail_2010_2011.csv', index=False)
 
-
 df1 = pd.read_csv('data/online_retail_2009_2010.csv')
 df2 = pd.read_csv('data/online_retail_2010_2011.csv')
 
@@ -16,6 +15,7 @@ df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
 df['Year'] = df['InvoiceDate'].dt.year
 df['Month'] = df['InvoiceDate'].dt.month
 df['Hour'] = df['InvoiceDate'].dt.hour
+df['YearWeek'] = df['InvoiceDate'].dt.strftime('%Y-%U')
 
 df['TotalSales'] = df['Quantity'] * df['Price']
 

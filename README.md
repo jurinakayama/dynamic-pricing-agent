@@ -60,7 +60,6 @@ Interpretation shows that
 * Price Inelastic (Elasticity > -1): Demand is less sensitive to price
 
 
-
 **KEY INSIGHTS**
 * ~60% of products were elastic
 * Reducing the price would increase revenue for highly elastic products
@@ -68,7 +67,7 @@ Interpretation shows that
 
 **INSTALLATION**
 Clone the repository:
-git clone https://github.com/yourusername/dynamic-pricing-agent.git cd dynamic-pricing-agent
+git clone https://github.com/jurinakayama/dynamic-pricing-agent.git cd dynamic-pricing-agent
 
 Install:
 pip install -r requirements.txt
@@ -89,7 +88,7 @@ dynamic-pricing-agent
 │   └─ dashboard.py
 │
 ├─ models 
-├─ notebooks
+│   └─ demand_curve_85123A.png
 │
 ├─ src  
 │   ├─ data_loader.py

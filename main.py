@@ -49,5 +49,12 @@ def run_agent():
     print('\nPreview of the new catalog:')
     print(results_df.head(10))
 
+    print(f'\nGenerating a sample visualization product id = 85123A')
+    sample_product = '85123A'
+    model.plot_demand_curve(sample_product, df)
+
 if __name__ == '__main__':
     run_agent()
+
+
+

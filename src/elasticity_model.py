@@ -47,8 +47,42 @@ class ElasticityModel:
                 elasticity = -0.5
 
             self.elasticities[product] = elasticity
-        print(f'Model trained! Calculated elasticity for {len(self.elasticities)} products.')
+        print(f'Calculated elasticity for {len(self.elasticities)} products.')
         
     def get_elasticity(self, product_id):
         return self.elasticities.get(product_id, -1.0)
+    
+    def plot_demand_curve(self, product_id, df):
+        import matplotlib.pyplot as plt
 
+        product_df = df[df['StockCode'] == product_id].copy()
+
+        if product_df.empty:
+            print(f'ERROR; No data found for product #{product_id}')
+            return
+        
+        if 'YearWeek' not in product_df.columns:
+            product_df['InvoiceDate'] = pd.to_datetime(product_df['InvoiceDate'])
+            product_df['YearWeek'] = product_df['InvoiceDate'].dt.strftime('%Y-%U')
+
+        week_data = product_df.groupby('YearWeek').agg({'Price':'mean', 'Quantity':'sum'}).reset_index()
+
+        plt.figure(figsize=(10,6))
+
+        plt.scatter(week_data['Price'], week_data['Quantity'], color = 'blue', alpha=0.5, label='Actualy Weekly Sales')
+
+        elasticity = self.get_elasticity(product_id)
+        if elasticity != -1.0:
+            x = np.linspace(week_data['Price'].min(), week_data['Price'].max(), 200)
+            b = np.mean(np.log(week_data['Quantity'])) - elasticity * np.mean(np.log(week_data['Price']))
+            y = np.exp(b) * (x ** elasticity)
+
+            plt.plot(x,y, color='red', linewidth=1.5, label=f'Demand Curve (Elasticity: {elasticity:.3f})')
+        
+        plt.title(f'Demand vs. Price for Product: {product_id}')
+        plt.xlabel('Average Weekly Price ($)')
+        plt.ylabel('Total Weekly Quantity Sold')
+        plt.legend()
+        plt.grid(True, linestyle = '--', alpha = 0.8)
+        plt.savefig('demand_curve.png', dpi=300, bbox_inches = 'tight')
+        plt.show()

@@ -1,7 +1,7 @@
 print('Activating Dynamic Pricing Agent ...\n')
 
 print('Loading and cleaning data...')
-from src.data_loader import df
+from src.data_loader import df, pd
 
 from src.elasticity_model import ElasticityModel
 from src.pricing_engine import PricingEngine

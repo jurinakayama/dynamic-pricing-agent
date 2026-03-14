@@ -84,5 +84,14 @@ class ElasticityModel:
         plt.ylabel('Total Weekly Quantity Sold')
         plt.legend()
         plt.grid(True, linestyle = '--', alpha = 0.8)
-        plt.savefig('demand_curve.png', dpi=300, bbox_inches = 'tight')
+
+        import os
+        output_folder = 'models'
+
+        if not os.path.exists(output_folder):
+            os.makedirs(output_folder)
+        
+        file_path = f'{output_folder}/demand_curve_{product_id}.png'
+        plt.savefig(file_path, dpi=300, bbox_inches = 'tight')
         plt.show()
+        

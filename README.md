@@ -50,7 +50,7 @@ Libraries used
 | 10120 | $0.24 | -2.3059 | 0.210000 |
 
 **Demand vs Price Model**
-![Demand Curve for Product 85123A](demand_curve.png)
+![Demand Curve for Product 85123A](demand_curve_85123A.png)
 
 4. Pricing Engine
 Recommends mathematically optimal price by application of economic formulas (e.g., Lerner Index) and business guardrails (e.g., +- 20% price)

@@ -40,8 +40,17 @@ Libraries used
 * numpy
 * scikit-learn
 
-Demand vs Price
-( MODEL) 
+**Output Preview**
+| StockCode | Current Price | Elasticity | Recommended Price |
+| :--- | :--- | :--- | :--- |
+| 10002 | $0.99 | -3.3586 | 0.790000 |
+| 10002R | $5.13 | -1.0000 | 5.133333 |
+| 10080 | $0.51 | -2.4923 | 0.420000 |
+| 10109 | $0.42 | -1.0000 | 0.420000 |
+| 10120 | $0.24 | -2.3059 | 0.210000 |
+
+**Demand vs Price Model**
+![Demand Curve for Product 85123A](demand_curve.png)
 
 4. Pricing Engine
 Recommends mathematically optimal price by application of economic formulas (e.g., Lerner Index) and business guardrails (e.g., +- 20% price)
@@ -49,12 +58,6 @@ Recommends mathematically optimal price by application of economic formulas (e.g
 Interpretation shows that
 * Price Elastic (Elasticity < –1): Demand is sensitive to price
 * Price Inelastic (Elasticity > -1): Demand is less sensitive to price
-
-
-**Example Output**
-Example elasticity values:
-
-
 
 
 
